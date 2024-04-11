@@ -15,7 +15,6 @@ import { useEffect } from "react";
 import { config } from "./constants/config";
 
 const App = () => {
-  console.log(import.meta.env.VITE_SERVICE_ID);
   useEffect(() => {
     if (document.title !== config.html.title) {
       document.title = config.html.title;

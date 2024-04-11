@@ -48,6 +48,22 @@ const Navbar = () => {
     };
   }, []);
 
+  const downloadResume = () => {
+    const resumePath = 'src/assets/document/Tejas_Surve.pdf';
+    
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = resumePath;
+    link.download = 'Tejas_Surve_Resume.pdf'; // specify the filename for download
+    document.body.appendChild(link);
+    
+    // Trigger a click event to initiate download
+    link.click();
+    
+    // Clean up: remove the temporary link
+    document.body.removeChild(link);
+};
+
   return (
     <nav
       className={`${
@@ -77,6 +93,7 @@ const Navbar = () => {
               className={`${
                 active === nav.id ? "text-white" : "text-secondary"
               } cursor-pointer text-[18px] font-medium hover:text-white`}
+              onClick = {()=> {if(nav.id =='resume'){downloadResume()}}}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
