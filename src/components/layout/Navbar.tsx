@@ -49,7 +49,7 @@ const Navbar = () => {
   }, []);
 
   const downloadResume = () => {
-    const resumePath = 'public/Tejas_Surve.pdf';
+    const resumePath = '/Tejas_Surve.pdf';
     
     // Create a temporary link element
     const link = document.createElement('a');
