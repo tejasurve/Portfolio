@@ -49,6 +49,7 @@ const Navbar = () => {
   }, []);
 
   const downloadResume = () => {
+    console.log('resume')
     const resumePath = '/Tejas_Surve.pdf';
     
     // Create a temporary link element
@@ -122,6 +123,7 @@ const Navbar = () => {
                   }`}
                   onClick={() => {
                     setToggle(!toggle);
+                    if(nav.id =='resume'){downloadResume()}
                   }}
                 >
                   <a href={`#${nav.id}`}>{nav.title}</a>
